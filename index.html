@@ -3,286 +3,347 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Jaruvit Sangkaewsirikul — AI Builder & Back-End Developer based in Bangkok. Portfolio showcasing projects, skills, and credentials."
-    />
+    <meta name="description" content="Jaruvit Sangkaewsirikul — Software Engineer based in Bangkok. Portfolio showcasing projects, skills, and credentials." />
     <title>Jaruvit Sangkaewsirikul | Portfolio</title>
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = savedTheme || systemTheme;
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <!-- Devicon - Tech logos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- ─── Top Bar ─── -->
-    <header class="topbar">
-      <span class="topbar-name">Jaruvit S.</span>
-      <nav class="topbar-nav">
-        <a href="https://github.com/Jaruvit0867" target="_blank" rel="noreferrer"><svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
-        <a href="https://linkedin.com/in/jaruvit-sangkaewsirikul-2049a7398/" target="_blank" rel="noreferrer"><svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-        <a href="assets/cv.pdf" target="_blank" rel="noreferrer"><i data-lucide="file-text" class="icon-sm"></i>Resume</a>
-      </nav>
+    <header class="command-bar">
+      <div class="command-shell">
+        <a class="brand" href="#background" aria-label="Jaruvit portfolio home">jaruvit<span>.</span></a>
+        <nav class="command-nav" aria-label="Primary links">
+          <a href="https://github.com/Jaruvit0867" target="_blank" rel="noreferrer">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/jaruvit-sangkaewsirikul-2049a7398/" target="_blank" rel="noreferrer">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </nav>
+      </div>
     </header>
 
-    <main class="layout">
-      <!-- ─── Left Column: Profile + Skills + Contact ─── -->
-      <aside class="sidebar">
-        <!-- Profile Card -->
-        <div class="card profile-card">
-          <img
-            class="avatar"
-            src="https://avatars.githubusercontent.com/u/119285251?v=4"
-            alt="Jaruvit Sangkaewsirikul"
-          />
-          <h1 class="profile-name">Jaruvit Sangkaewsirikul</h1>
-          <p class="profile-title">Software Engineer</p>
+    <main class="split-shell">
+      <aside class="profile-rail reveal" aria-label="Profile">
+        <div class="profile-card">
+          <div class="avatar-wrap">
+            <img class="profile-avatar" src="https://avatars.githubusercontent.com/u/119285251?v=4" alt="Jaruvit Sangkaewsirikul" />
+            <span class="avatar-status" aria-hidden="true"></span>
+          </div>
+          <div class="profile-intro">
+            <h1>Jaruvit Sangkaewsirikul</h1>
+            <p>Software Engineer</p>
+          </div>
 
-          <div class="profile-details">
+          <div class="profile-meta">
             <span><i data-lucide="map-pin" class="icon-xs"></i>Bangkok, Thailand</span>
-            <span><i data-lucide="mail" class="icon-xs"></i>nn0t6370@gmail.com</span>
-            <span><i data-lucide="graduation-cap" class="icon-xs"></i>B.Sc. Computer & Info Science</span>
-            <span><i data-lucide="school" class="icon-xs"></i>Khon Kaen University · GPA 3.00</span>
+            <span class="availability"><span class="status-dot"></span>Open to opportunities</span>
+            <a href="mailto:nn0t6370@gmail.com"><i data-lucide="mail" class="icon-xs"></i>nn0t6370@gmail.com</a>
           </div>
 
-          <div class="profile-actions">
-            <a class="btn btn-primary" href="https://github.com/Jaruvit0867" target="_blank" rel="noreferrer">
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub Profile
+          <div class="social-actions" aria-label="Profile links">
+            <a href="https://github.com/Jaruvit0867" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             </a>
-            <a class="btn btn-outline" href="assets/cv.pdf" target="_blank" rel="noreferrer">
-              <i data-lucide="download" class="icon-sm"></i>Download CV
+            <a href="https://linkedin.com/in/jaruvit-sangkaewsirikul-2049a7398/" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
+            <a href="mailto:nn0t6370@gmail.com" title="Email" aria-label="Email"><i data-lucide="mail"></i></a>
+            <a href="assets/cv.pdf" target="_blank" rel="noreferrer" title="Download CV" aria-label="Download CV"><i data-lucide="download"></i></a>
+          </div>
+
+          <div class="rail-actions">
+            <a class="resume-btn" href="assets/cv.pdf" target="_blank" rel="noreferrer"><i data-lucide="download" class="icon-sm"></i>Resume</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+              <i data-lucide="moon" class="icon-sm"></i>
+            </button>
           </div>
         </div>
 
-        <!-- Skills Card -->
-        <div class="card">
-          <h2 class="card-title"><i data-lucide="code-2" class="icon-sm"></i>Skills</h2>
-          <div class="skill-group">
-            <span class="skill-label">Languages</span>
-            <div class="chip-row">
-              <span><i class="devicon-java-plain colored"></i>Java</span>
-              <span><i class="devicon-python-plain colored"></i>Python</span>
-              <span><i class="devicon-azuresqldatabase-plain colored"></i>SQL</span>
-              <span><i class="devicon-typescript-plain colored"></i>TypeScript</span>
-              <span><i class="devicon-html5-plain colored"></i>HTML</span>
-              <span><i class="devicon-css3-plain colored"></i>CSS</span>
-              <span><i class="devicon-javascript-plain colored"></i>JavaScript</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <span class="skill-label">Backend</span>
-            <div class="chip-row">
-              <span><i class="devicon-spring-plain colored"></i>Spring Boot</span>
-              <span><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
-              <span><i class="devicon-nextjs-plain"></i>Next.js</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <span class="skill-label">Database</span>
-            <div class="chip-row">
-              <span><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
-              <span><i class="devicon-sqlite-plain colored"></i>SQLite</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <span class="skill-label">Cloud & DevOps</span>
-            <div class="chip-row">
-              <span><i class="devicon-azure-plain colored"></i>Azure</span>
-              <span><i class="devicon-docker-plain colored"></i>Docker</span>
-              <span><i class="devicon-git-plain colored"></i>Git</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <span class="skill-label">AI Tools</span>
-            <div class="chip-row">
-              <span><i class="devicon-azure-plain colored"></i>Azure AI Foundry</span>
-              <span><img class="chip-icon" src="assets/icons/claude.png" alt="">Claude Code</span>
-              <span><img class="chip-icon" src="assets/icons/ollama.png" alt="">Ollama</span>
-              <span><img class="chip-icon" src="assets/icons/openclaw.png" alt="">OpenClaw</span>
-              <span><img class="chip-icon" src="assets/icons/codex.png" alt="">Codex</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <span class="skill-label">Languages</span>
-            <div class="chip-row">
-              <span><img class="chip-icon" src="https://flagcdn.com/w20/th.png" alt="">Thai (Native)</span>
-              <span><img class="chip-icon" src="https://flagcdn.com/w20/gb.png" alt="">English (TOEIC 800)</span>
-            </div>
-          </div>
-        </div>
+        <nav class="section-rail" aria-label="Portfolio sections">
+          <span class="rail-label">Navigation</span>
+          <a class="rail-nav-link active" href="#background"><i data-lucide="circle-dot" class="icon-sm"></i>Background</a>
+          <a class="rail-nav-link" href="#tech"><i data-lucide="code-2" class="icon-sm"></i>Tech Stack</a>
+          <a class="rail-nav-link" href="#projects"><i data-lucide="folder-git-2" class="icon-sm"></i>Projects</a>
+          <a class="rail-nav-link" href="#certifications"><i data-lucide="award" class="icon-sm"></i>Certifications & Awards</a>
+        </nav>
       </aside>
 
-      <!-- ─── Right Column: Experience + Projects + Credentials ─── -->
-      <section class="main-content">
-        <!-- Experience -->
-        <div class="card">
-          <h2 class="card-title"><i data-lucide="briefcase" class="icon-sm"></i>Experience</h2>
-          <div class="experience-item">
-            <div class="exp-header">
-              <strong>AI Engineer Bootcamp — Top 50 Finalist</strong>
-              <span class="exp-date">Feb 2026 – Present</span>
-            </div>
-            <p class="exp-org">AIAT & Microsoft</p>
-            <ul class="exp-details">
-              <li>Engineered "Contoso Product Support Assistant" using Microsoft Foundry and RAG architecture</li>
-              <li>Gaining expertise in AI Agent development and autonomous workflows on Azure DevOps</li>
-            </ul>
+      <section class="workspace" aria-label="Portfolio content">
+        <section class="workspace-panel panel-background reveal" id="background">
+          <div class="panel-heading">
+            <span class="section-dot"></span>
+            <h2>Background</h2>
           </div>
-        </div>
+          <div class="background-grid">
+            <article class="experience-column">
+              <div class="subheading">
+                <span class="label-icon"><i data-lucide="briefcase" class="icon-sm"></i></span>
+                <h3>Experience</h3>
+              </div>
+              <div class="timeline-item">
+                <div class="exp-header">
+                  <strong>AI Engineer Bootcamp — Top 50 Finalist</strong>
+                  <span class="exp-date">Feb 2026 – Present</span>
+                </div>
+                <p class="exp-org">AIAT & Microsoft</p>
+                <ul class="exp-details">
+                  <li>Selected as a Top 50 Finalist nationwide for an intensive AI Engineering program focused on scalable, enterprise-grade AI solutions</li>
+                  <li>Engineered a "Contoso Product Support Assistant" for the Phase 2 Mini-Hackathon using the provided Contoso sample product scenario, Microsoft Foundry, and RAG architecture to retrieve and synthesize answers from 50 product markdown files</li>
+                  <li>Gaining advanced hands-on expertise in Phase 3, including AI Agent development, autonomous workflows, and deploying secure AI solutions utilizing Azure</li>
+                </ul>
+              </div>
+            </article>
 
-        <!-- Projects -->
-        <div class="card">
-          <h2 class="card-title"><i data-lucide="folder-git-2" class="icon-sm"></i>Projects</h2>
+            <aside class="education-panel" aria-label="Education">
+              <div class="subheading">
+                <span class="label-icon label-icon-blue"><i data-lucide="graduation-cap" class="icon-sm"></i></span>
+                <h3>Education</h3>
+              </div>
+              <dl class="education-list">
+                <div class="education-row">
+                  <dt>Degree</dt>
+                  <dd>B.Sc. Computer & Info Science</dd>
+                </div>
+                <div class="education-row">
+                  <dt>University</dt>
+                  <dd>Khon Kaen University</dd>
+                </div>
+                <div class="education-row">
+                  <dt>GPA</dt>
+                  <dd>GPA 3.00</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+        </section>
 
-          <div class="project-item">
-            <div class="project-header">
-              <h3>Gesture-Control Presentation System</h3>
-              <span class="badge badge-live">
-                <i data-lucide="radio" class="icon-xs"></i>Live
-              </span>
+        <section class="workspace-panel panel-tech reveal" id="tech">
+          <div class="panel-heading">
+            <span class="section-dot"></span>
+            <h2>Tech Stack</h2>
+          </div>
+          <div class="skill-table">
+            <div class="skill-row">
+              <span class="skill-label"><i data-lucide="code" class="icon-sm"></i>Languages</span>
+              <div class="chip-row">
+                <span><i class="devicon-java-plain colored"></i>Java</span>
+                <span><i class="devicon-python-plain colored"></i>Python</span>
+                <span><i class="devicon-azuresqldatabase-plain colored"></i>SQL</span>
+                <span><i class="devicon-typescript-plain colored"></i>TypeScript</span>
+                <span><i class="devicon-html5-plain colored"></i>HTML</span>
+                <span><i class="devicon-css3-plain colored"></i>CSS</span>
+                <span><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+              </div>
             </div>
-            <p class="project-year">Senior Project · 2025</p>
-            <p>Web-based system using Computer Vision (MediaPipe) and WebSockets (Ably) for real-time slide control.</p>
-            <div class="chip-row">
-              <span><i class="devicon-react-original colored"></i>React</span>
-              <span><i class="devicon-vitejs-plain colored"></i>Vite</span>
-              <span><i class="devicon-google-plain colored"></i>MediaPipe</span>
-              <span><img class="chip-icon" src="assets/icons/pdfjs.png" alt="">PDF.js</span>
-              <span><img class="chip-icon" src="assets/icons/ably.png" alt="">Ably</span>
+            <div class="skill-row">
+              <span class="skill-label"><i data-lucide="server" class="icon-sm"></i>Backend</span>
+              <div class="chip-row">
+                <span><i class="devicon-spring-plain colored"></i>Spring Boot</span>
+                <span><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
+                <span><i class="devicon-nextjs-plain"></i>Next.js</span>
+              </div>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/Jaruvit0867/Gesture-Presenter" target="_blank" rel="noreferrer"><svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a>
-              <a href="https://gesture-presenter.vercel.app" target="_blank" rel="noreferrer"><i data-lucide="external-link" class="icon-xs"></i>Demo</a>
+            <div class="skill-row">
+              <span class="skill-label"><i data-lucide="database" class="icon-sm"></i>Database</span>
+              <div class="chip-row">
+                <span><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                <span><i class="devicon-sqlite-plain colored"></i>SQLite</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-label"><i data-lucide="cloud" class="icon-sm"></i>Cloud & DevOps</span>
+              <div class="chip-row">
+                <span><i class="devicon-azure-plain colored"></i>Azure</span>
+                <span><i class="devicon-docker-plain colored"></i>Docker</span>
+                <span><i class="devicon-git-plain colored"></i>Git</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-label"><i data-lucide="sparkles" class="icon-sm"></i>AI Tools</span>
+              <div class="chip-row">
+                <span><i class="devicon-azure-plain colored"></i>Azure AI Foundry</span>
+                <span><img class="chip-icon" src="assets/icons/claude.png" alt="">Claude Code</span>
+                <span><img class="chip-icon" src="assets/icons/ollama.png" alt="">Ollama</span>
+                <span><img class="chip-icon" src="assets/icons/openclaw.png" alt="">OpenClaw</span>
+                <span><img class="chip-icon" src="assets/icons/codex.png" alt="">Codex</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-label"><i data-lucide="languages" class="icon-sm"></i>Human Languages</span>
+              <div class="chip-row">
+                <span><img class="chip-icon" src="https://flagcdn.com/w20/th.png" alt="">Thai (Native)</span>
+                <span><img class="chip-icon" src="https://flagcdn.com/w20/gb.png" alt="">English (TOEIC 800)</span>
+              </div>
             </div>
           </div>
+        </section>
 
-          <div class="divider"></div>
-
-          <div class="project-item">
-            <div class="project-header">
-              <h3>Gorilla Menu AI Assistant</h3>
-              <span class="badge">2026</span>
-            </div>
-            <p>AI assistant for employees using Azure AI Foundry and Spring Boot with secure REST APIs and Thai-language query support.</p>
-            <div class="chip-row">
-              <span><i class="devicon-spring-plain colored"></i>Spring Boot</span>
-              <span><i class="devicon-nextjs-plain"></i>Next.js</span>
-              <span><i class="devicon-typescript-plain colored"></i>TypeScript</span>
-              <span><i class="devicon-java-plain colored"></i>Java</span>
-              <span><i class="devicon-azure-plain colored"></i>Azure AI</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Jaruvit0867/Gorilla-Ai-Assistant" target="_blank" rel="noreferrer"><svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a>
-              <a href="https://gorilla-ai-assistant.vercel.app/" target="_blank" rel="noreferrer"><i data-lucide="external-link" class="icon-xs"></i>Demo</a>
-            </div>
+        <section class="workspace-panel panel-projects reveal" id="projects">
+          <div class="panel-heading">
+            <span class="section-dot"></span>
+            <h2>Projects</h2>
           </div>
+          <div class="projects-grid">
+            <article class="project-card project-featured">
+              <div class="project-icon"><i data-lucide="folder" class="icon-sm"></i></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3>Gesture-Control Presentation System</h3>
+                  <div class="project-badges">
+                    <span class="badge mono">2025</span>
+                    <span class="badge badge-accent">Senior Project</span>
+                    <span class="badge badge-live"><span class="live-dot"></span>Live</span>
+                  </div>
+                </div>
+                <p>Web-based system using Computer Vision (MediaPipe) and WebSockets (Ably) for real-time slide control.</p>
+                <div class="chip-row">
+                  <span><i class="devicon-react-original colored"></i>React</span>
+                  <span><i class="devicon-vitejs-plain colored"></i>Vite</span>
+                  <span><i class="devicon-google-plain colored"></i>MediaPipe</span>
+                  <span><img class="chip-icon" src="assets/icons/pdfjs.png" alt="">PDF.js</span>
+                  <span><img class="chip-icon" src="assets/icons/ably.png" alt="">Ably</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Jaruvit0867/Gesture-Presenter" target="_blank" rel="noreferrer">
+                    <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    Repository
+                  </a>
+                  <a href="https://gesture-presenter.vercel.app" target="_blank" rel="noreferrer"><i data-lucide="external-link" class="icon-xs"></i>Live Demo</a>
+                </div>
+              </div>
+            </article>
 
-          <div class="divider"></div>
+            <article class="project-card">
+              <div class="project-icon"><i data-lucide="folder" class="icon-sm"></i></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3>Gorilla Menu AI Assistant</h3>
+                  <span class="badge mono">2026</span>
+                </div>
+                <p>AI assistant for employees using Azure AI Foundry and Spring Boot with secure REST APIs and Thai-language query support.</p>
+                <div class="chip-row">
+                  <span><i class="devicon-spring-plain colored"></i>Spring Boot</span>
+                  <span><i class="devicon-nextjs-plain"></i>Next.js</span>
+                  <span><i class="devicon-typescript-plain colored"></i>TypeScript</span>
+                  <span><i class="devicon-java-plain colored"></i>Java</span>
+                  <span><i class="devicon-azure-plain colored"></i>Azure AI</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Jaruvit0867/Gorilla-Ai-Assistant" target="_blank" rel="noreferrer">
+                    <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    Repository
+                  </a>
+                  <a href="https://gorilla-ai-assistant.vercel.app/" target="_blank" rel="noreferrer"><i data-lucide="external-link" class="icon-xs"></i>Live Demo</a>
+                </div>
+              </div>
+            </article>
 
-          <div class="project-item">
-            <div class="project-header">
-              <h3>EatEasy — Voice-Controlled Food Ordering</h3>
-              <span class="badge">2025</span>
-            </div>
-            <p>Full-stack platform using Next.js and FastAPI with real-time kitchen display and menu management.</p>
-            <div class="chip-row">
-              <span><i class="devicon-nextjs-plain"></i>Next.js</span>
-              <span><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
-              <span><i class="devicon-python-plain colored"></i>Python</span>
-              <span><i class="devicon-sqlite-plain colored"></i>SQLite</span>
-              <span><i class="devicon-azure-plain colored"></i>Azure</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Jaruvit0867/EatEasyFoodOrder" target="_blank" rel="noreferrer"><svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>Repository</a>
-            </div>
+            <article class="project-card">
+              <div class="project-icon"><i data-lucide="folder" class="icon-sm"></i></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3>EatEasy — Voice-Controlled Food Ordering</h3>
+                  <span class="badge mono">2025</span>
+                </div>
+                <p>Full-stack platform using Next.js and FastAPI with real-time kitchen display and menu management.</p>
+                <div class="chip-row">
+                  <span><i class="devicon-nextjs-plain"></i>Next.js</span>
+                  <span><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
+                  <span><i class="devicon-python-plain colored"></i>Python</span>
+                  <span><i class="devicon-sqlite-plain colored"></i>SQLite</span>
+                  <span><i class="devicon-azure-plain colored"></i>Azure</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Jaruvit0867/EatEasyFoodOrder" target="_blank" rel="noreferrer">
+                    <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    Repository
+                  </a>
+                </div>
+              </div>
+            </article>
           </div>
-        </div>
+        </section>
 
-        <!-- Certifications -->
-        <div class="card">
-          <h2 class="card-title"><i data-lucide="award" class="icon-sm"></i>Certifications & Awards</h2>
-          <div class="certs-grid">
+        <section class="workspace-panel panel-certs reveal" id="certifications">
+          <div class="panel-heading">
+            <span class="section-dot"></span>
+            <h2>Certifications & Awards</h2>
+          </div>
+          <div class="cert-list">
             <a class="cert-item" href="assets/AUCC-Award-Certificate.pdf" target="_blank" rel="noreferrer">
               <i data-lucide="trophy" class="cert-icon icon-accent"></i>
-              <div>
-                <strong>"Very Good" Award</strong>
-                <span>AUCC Conference 14th · 2026</span>
-              </div>
+              <div><strong>"Very Good" Award</strong><span>AUCC Conference 14th · 2026</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
             <a class="cert-item" href="assets/AZ-900.pdf" target="_blank" rel="noreferrer">
               <img class="cert-icon-img" src="assets/icons/az900.png" alt="">
-              <div>
-                <strong>AZ-900 Azure Fundamentals</strong>
-                <span>Microsoft · 2026</span>
-              </div>
+              <div><strong>AZ-900 Azure Fundamentals</strong><span>Microsoft · 2026</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
             <a class="cert-item" href="assets/toeic.pdf" target="_blank" rel="noreferrer">
               <img class="cert-icon-img" src="assets/icons/toeic.png" alt="">
-              <div>
-                <strong>TOEIC Score 800</strong>
-                <span>2025</span>
-              </div>
+              <div><strong>TOEIC Score 800</strong><span>2025</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
             <a class="cert-item" href="assets/JavaProgrammingFundamentals-Specialization.pdf" target="_blank" rel="noreferrer">
               <i class="devicon-java-plain colored cert-icon-dev"></i>
-              <div>
-                <strong>Java Fundamentals</strong>
-                <span>IBM & SkillUp · 2026</span>
-              </div>
+              <div><strong>Java Fundamentals</strong><span>IBM & SkillUp · 2026</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
             <a class="cert-item" href="assets/MasterJavaWebServicesAndRESTAPIWithSpringBoot-Course.pdf" target="_blank" rel="noreferrer">
               <i class="devicon-spring-plain colored cert-icon-dev"></i>
-              <div>
-                <strong>Java REST API & Spring Boot</strong>
-                <span>Packt · 2026</span>
-              </div>
+              <div><strong>Java REST API & Spring Boot</strong><span>Packt · 2026</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
             <a class="cert-item" href="assets/Python3Programing-Specialization.pdf" target="_blank" rel="noreferrer">
               <i class="devicon-python-plain colored cert-icon-dev"></i>
-              <div>
-                <strong>Python 3 Specialization</strong>
-                <span>U. of Michigan · 2026</span>
-              </div>
+              <div><strong>Python 3 Specialization</strong><span>U. of Michigan · 2026</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
             <a class="cert-item" href="assets/HackerRankProblemSolving(Basic).png" target="_blank" rel="noreferrer">
               <img class="cert-icon-img" src="assets/icons/hackerrank.png" alt="">
-              <div>
-                <strong>Problem Solving (Basic)</strong>
-                <span>HackerRank · 2026</span>
-              </div>
+              <div><strong>Problem Solving (Basic)</strong><span>HackerRank · 2026</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
             <a class="cert-item" href="assets/HackerRankPython(Basic).png" target="_blank" rel="noreferrer">
               <img class="cert-icon-img" src="assets/icons/hackerrank.png" alt="">
-              <div>
-                <strong>Python (Basic)</strong>
-                <span>HackerRank · 2026</span>
-              </div>
+              <div><strong>Python (Basic)</strong><span>HackerRank · 2026</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
             <a class="cert-item" href="assets/Secure&ScalableCloudInfrastructureWithMicrosoftAzure-Course.pdf" target="_blank" rel="noreferrer">
               <i class="devicon-azure-plain colored cert-icon-dev"></i>
-              <div>
-                <strong>Azure Cloud Infrastructure</strong>
-                <span>Microsoft · 2025</span>
-              </div>
+              <div><strong>Azure Cloud Infrastructure</strong><span>Microsoft · 2025</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
             <a class="cert-item" href="assets/SkillUp-Springboot.pdf" target="_blank" rel="noreferrer">
               <i class="devicon-spring-plain colored cert-icon-dev"></i>
-              <div>
-                <strong>SkillUp Spring Boot</strong>
-                <span>2026</span>
-              </div>
+              <div><strong>SkillUp Spring Boot</strong><span>2026</span></div>
+              <i data-lucide="external-link" class="icon-xs"></i>
             </a>
           </div>
-        </div>
+        </section>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="footer-shell">
+        <span>&copy; <span id="year"></span> Jaruvit Sangkaewsirikul</span>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
