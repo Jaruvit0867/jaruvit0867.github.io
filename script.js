@@ -81,7 +81,14 @@ if (railLinks.length && sections.length && "IntersectionObserver" in window) {
     if (activeEntry) {
       setActiveRail(activeEntry.target.id);
     }
-  }, { threshold: [0.22, 0.4, 0.62], rootMargin: "-18% 0px -56% 0px" });
+  }, { threshold: [0.05, 0.15, 0.3], rootMargin: "-10% 0px -60% 0px" });
 
   sections.forEach((section) => sectionObserver.observe(section));
+
+  // Fallback: on manual click, force active state
+  railLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      setActiveRail(link.getAttribute("href").replace("#", ""));
+    });
+  });
 }
