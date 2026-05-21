@@ -299,7 +299,7 @@ img { display: block; max-width: 100%; }
 
 .social-actions {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 7px;
   margin-top: 16px;
 }
@@ -372,7 +372,6 @@ img { display: block; max-width: 100%; }
 }
 
 .rail-nav-link {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 9px;
@@ -383,20 +382,15 @@ img { display: block; max-width: 100%; }
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 700;
-  transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
 .rail-nav-link + .rail-nav-link { margin-top: 3px; }
 
-.rail-nav-link:hover,
-.rail-nav-link.active {
+.rail-nav-link:hover {
   color: var(--accent-strong);
   border-left-color: var(--accent);
   background: var(--accent-soft);
-}
-
-.rail-nav-link.active {
-  transform: none;
 }
 
 .workspace {
@@ -477,6 +471,10 @@ img { display: block; max-width: 100%; }
   padding-left: 20px;
 }
 
+.timeline-item + .timeline-item {
+  margin-top: 20px;
+}
+
 .timeline-item::before {
   content: "";
   position: absolute;
@@ -555,6 +553,34 @@ img { display: block; max-width: 100%; }
 }
 
 .exp-details li + li { margin-top: 5px; }
+
+.exp-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.exp-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 5px 8px;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  color: var(--accent-strong);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.exp-links a:hover {
+  transform: translateY(-1px);
+  background: var(--accent-soft);
+}
 
 .education-panel {
   padding: 15px;
@@ -654,6 +680,12 @@ img { display: block; max-width: 100%; }
 .chip-row span i[class^="devicon"] {
   margin-right: 5px;
   font-size: 14px;
+}
+
+.chip-row span svg.lucide {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
 }
 
 .chip-icon {
@@ -957,8 +989,7 @@ img { display: block; max-width: 100%; }
     border-bottom: 2px solid transparent;
   }
 
-  .rail-nav-link:hover,
-  .rail-nav-link.active {
+  .rail-nav-link:hover {
     border-bottom-color: var(--accent);
   }
 }
@@ -1094,6 +1125,7 @@ img { display: block; max-width: 100%; }
   .rail-nav-link {
     font-size: 0.8rem;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

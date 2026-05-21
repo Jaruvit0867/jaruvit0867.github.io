@@ -60,35 +60,3 @@ if (revealEls.length && "IntersectionObserver" in window) {
 } else {
   revealEls.forEach((el) => el.classList.add("visible"));
 }
-
-const railLinks = document.querySelectorAll(".rail-nav-link[href^='#']");
-const sections = [...railLinks]
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
-
-function setActiveRail(sectionId) {
-  railLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${sectionId}`);
-  });
-}
-
-if (railLinks.length && sections.length && "IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver((entries) => {
-    const activeEntry = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-    if (activeEntry) {
-      setActiveRail(activeEntry.target.id);
-    }
-  }, { threshold: [0.05, 0.15, 0.3], rootMargin: "-10% 0px -60% 0px" });
-
-  sections.forEach((section) => sectionObserver.observe(section));
-
-  // Fallback: on manual click, force active state
-  railLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      setActiveRail(link.getAttribute("href").replace("#", ""));
-    });
-  });
-}
